@@ -1,5 +1,5 @@
 import React                          from 'react';
-import { shallow }                    from 'Enzyme';
+import { shallow }                    from 'enzyme';
 import { findByTestAttr, checkProps } from "../test/testUtils";
 import GuessedWords                   from './GuessWords';
 
@@ -18,7 +18,7 @@ test('does not throw warning with expected props', () => {
 
 describe('if there are no words guessed', () => {
   test('renders without error', () => {
-    const wrapper = setup({ guessedWords: [] });
+    const wrapper   = setup({ guessedWords: [] });
     const component = findByTestAttr(wrapper, 'component-guessed-words');
     expect(component.length).toBe(1);
   });
