@@ -3,6 +3,12 @@ import { connect }          from 'react-redux';
 import { guessWord }        from './actions';
 
 export class UnconnectedInput extends Component {
+  constructor(props) {
+    super(props);
+
+    this.inputBox = React.createRef();
+  }
+
   render() {
     const contents = this.props.success
       ? null
@@ -10,6 +16,7 @@ export class UnconnectedInput extends Component {
         <form className="form-inline">
           <input
             data-test="input-box"
+            ref={this.inputBox}
             className="mb-2 mx-sm-3"
             id="word-guess"
             type="text"
@@ -17,7 +24,7 @@ export class UnconnectedInput extends Component {
           <button
             data-test="submit-button"
             className="btn btn-primary mb-2"
-            onClick={() => this.props.guessWord('train')}
+            onClick={() => this.props.guessWord('')}
             type="submit">
             Submit
           </button>
