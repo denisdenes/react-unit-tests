@@ -24,8 +24,8 @@ describe('redux properties', () => {
     expect(secretWordProp).toBe(secretWord);
   });
 
-  test('has access to `guessedtWords` state', () => {
-    const guessedWords = [{ guessedtWord: 'train', letterMatchCount: 3 }];
+  test('has access to `guessedWords` state', () => {
+    const guessedWords = [{ guessedWord: 'train', letterMatchCount: 3 }];
     const wrapper = setup({ guessedWords });
     const guessedWordsProp = wrapper.instance().props.guessedWords;
     expect(guessedWordsProp).toBe(guessedWords);
