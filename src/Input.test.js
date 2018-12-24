@@ -84,13 +84,13 @@ describe('`guessWord` action creator call', () => {
   const guessedWord = 'train';
 
   beforeEach(() => {
-    //setup mock for `guessWord`
+    // setup mock for `getSecretWord`
     guessWordMock = jest.fn();
 
     const props = { guessWord: guessWordMock };
 
     // setup app component with guessWordMock as the guessWord prop
-    const wrapper = shallow(<UnconnectedInput {...props} />);
+    wrapper = shallow(<UnconnectedInput {...props} />);
 
     // add value to the input box
     wrapper.instance().inputBox.current = { value: guessedWord };
